@@ -9,4 +9,7 @@
 <ion-content>
     <ion-input readonly [(ngModel)]="datePickerDate" 
     [liIonic4Datepicker]="datePickerObj" (ionChange)="onCalendarChange($event)"></ion-input>
+
+    <ion-input readonly [(ngModel)]="datePickerFormattedDate" 
+    [liIonic4Datepicker]="datePickerObj" (ionChange)="onCalendarChange($event)"></ion-input>
 </ion-content>

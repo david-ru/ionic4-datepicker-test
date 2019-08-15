@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,15 @@ import { ModalController } from '@ionic/angular';
 })
 export class HomePage {
   public datePickerDate;
+  public datePickerFormattedDate;
   public datePickerObj;
 
   constructor(
     public modalCtrl: ModalController
   ) {
-    this.datePickerDate = new Date(2019, 5, 16);
+    this.datePickerDate = new Date(2019, 5, 19);
+    moment.locale('es');
+    this.datePickerFormattedDate = moment(this.datePickerDate).format('DD MMMM YYYY');
     this.datePickerObj = this.datePickerConfiguration(
       new Date(2019, 5, 16),
       new Date(2019, 6, 15),
@@ -31,13 +35,8 @@ export class HomePage {
       closeOnSelect: true, // default false
       disableWeekDays: [], // default []
       mondayFirst: true, // default false
-      setLabel: 'Aceptar',  // default 'Set'
-      todayLabel: 'Hoy', // default 'Today'
-      closeLabel: 'Cerrar', // default 'Close'
       disabledDates: disabledDates, // default []
-      titleLabel: 'Selecciona una fecha', // default null
-      monthsList: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
-      weeksList: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+      titleLabel: 'Select a date', // default null
       dateFormat: 'DD MMMM YYYY', // default DD MMM YYYY
       clearButton : false , // default true
       momentLocale: 'es-ES', // Default 'en-US'
