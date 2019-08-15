@@ -10,6 +10,7 @@ import * as moment from 'moment';
 export class HomePage {
   public datePickerDate;
   public datePickerFormattedDate;
+  public datePickerLocaleDate;
   public datePickerObj;
 
   constructor(
@@ -18,10 +19,15 @@ export class HomePage {
     this.datePickerDate = new Date(2019, 5, 19);
     moment.locale('es');
     this.datePickerFormattedDate = moment(this.datePickerDate).format('DD MMMM YYYY');
+    this.datePickerLocaleDate = moment(this.datePickerDate).format('LL');
     this.datePickerObj = this.datePickerConfiguration(
       new Date(2019, 5, 16),
       new Date(2019, 6, 15),
       this.datePickerDate);
+  }
+
+  public onCalendarChange() {
+
   }
 
   private datePickerConfiguration(beginDate: Date, endDate: Date, currentDate: Date) {
