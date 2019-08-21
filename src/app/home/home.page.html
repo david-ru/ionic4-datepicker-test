@@ -11,11 +11,11 @@
   <ion-input readonly [(ngModel)]="datePickerDate" 
   [liIonic4Datepicker]="datePickerObj" (ionChange)="onCalendarChange($event)"></ion-input>
 
-  <b>MomentJs formatting that works: 'DD MMMM YYYY':</b>
+  <b>Same input and datepicker formatting: 'DD MMMM YYYY':</b>
   <ion-input readonly [(ngModel)]="datePickerFormattedDate" 
   [liIonic4Datepicker]="datePickerObj" (ionChange)="onCalendarChange($event)"></ion-input>
 
-  <b>MomentJs locale formatting that doesn't work: 'LL':</b>
+  <b>Input formatting 'LL' with previous datepicker formatting ('DD MMMM YYYY'):</b>
   <ion-input readonly [(ngModel)]="datePickerLocaleDate" 
   [liIonic4Datepicker]="datePickerObj" (ionChange)="onCalendarChange($event)"></ion-input>
 </ion-content>
